@@ -22,3 +22,19 @@ class Course(models.Model):
         """Returns the url to access a detail record for this course."""
         return reverse('course-detail', args=[str(self.id)])    
 
+
+class Category (models.Model):
+    name = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=10, default=0.0, decimal_places=2)
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.name
+    def get_absolute_url(self):
+        """Returns the url to access a detail record for this course."""
+        return reverse('course-detail', args=[str(self.id)])  
+#from django.db import models
+
+
+
+
